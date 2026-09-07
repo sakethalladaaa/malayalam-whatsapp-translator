@@ -1,1 +1,1 @@
-# malayalam-whatsapp-translator
+# TRANSLATOR CHROME EXTENSION
