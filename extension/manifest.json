@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Malayalam WhatsApp Translator",
+  "version": "0.1.0",
+  "description": "Detect Malayalam text on WhatsApp Web and translate it into English.",
+  "permissions": [],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ],
+      "js": [
+        "src/content.js"
+      ],
+      "css": [
+        "styles/content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Malayalam WhatsApp Translator"
+  }
+}

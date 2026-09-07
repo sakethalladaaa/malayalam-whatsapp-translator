@@ -1,0 +1,13 @@
+.malayalam-translator-popup {
+  position: fixed;
+  z-index: 999999;
+  max-width: 360px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
