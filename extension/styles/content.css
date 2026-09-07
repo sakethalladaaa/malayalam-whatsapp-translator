@@ -1,8 +1,8 @@
 .malayalam-translator-popup {
   position: fixed;
   z-index: 999999;
-  max-width: 360px;
-  padding: 10px 14px;
+  width: min(320px, calc(100vw - 16px));
+  padding: 12px;
   border-radius: 10px;
   background: #111;
   color: #fff;
@@ -10,4 +10,30 @@
   font-size: 14px;
   line-height: 1.4;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+.malayalam-translator-text {
+  margin-bottom: 10px;
+  overflow-wrap: anywhere;
+}
+
+.malayalam-translator-button {
+  display: inline-block;
+  padding: 7px 12px;
+  border: 0;
+  border-radius: 7px;
+  background: #25d366;
+  color: #111;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.malayalam-translator-button:hover {
+  opacity: 0.9;
+}
+
+.malayalam-translator-button:active {
+  transform: translateY(1px);
 }
