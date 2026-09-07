@@ -35,3 +35,28 @@ Athrem onnum venda
 Enikku manasilayi
 Ningal evideya
 Njan innu busy aanu
+```
+
+## Development Tools
+
+The project uses the following development tools and open-source technologies.
+
+| Tool / Technology | Purpose | Official Link |
+|---|---|---|
+| Python 3.11+ | Backend development | https://www.python.org/downloads/ |
+| Git | Version control | https://git-scm.com/ |
+| Google Chrome | Chrome extension testing | https://www.google.com/chrome/ |
+| Visual Studio Code | Development environment | https://code.visualstudio.com/ |
+| FastAPI | Backend API framework | https://fastapi.tiangolo.com/ |
+| Uvicorn | ASGI server for FastAPI | https://www.uvicorn.org/ |
+| AI4Bharat IndicLID | Indian language identification | https://github.com/AI4Bharat/IndicLID |
+| AI4Bharat IndicXlit | Indic transliteration | https://github.com/AI4Bharat/IndicXlit |
+| AI4Bharat IndicTrans2 | Indic language translation | https://github.com/AI4Bharat/IndicTrans2 |
+
+### Recommended Environment
+
+- Python 3.11 or newer
+- Google Chrome
+- Git
+- Visual Studio Code
+- macOS / Windows / Linux
