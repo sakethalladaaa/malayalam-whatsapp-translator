@@ -13,6 +13,7 @@
         "https://web.whatsapp.com/*"
       ],
       "js": [
+        "src/whatsapp/dom.js",
         "src/content.js"
       ],
       "css": [

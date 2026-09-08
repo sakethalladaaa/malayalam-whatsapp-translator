@@ -93,14 +93,33 @@
       return;
     }
 
-    const selectedText = window.getSelection()?.toString().trim();
+    const selection = window.getSelection();
+    const selectedText = selection?.toString().trim();
 
     if (!selectedText) {
       removePopup();
       return;
     }
 
-    createPopup(selectedText);
+    const anchorNode = selection?.anchorNode;
+    const focusNode = selection?.focusNode;
+    const domHelper = window.MalayalamTranslatorWhatsAppDOM;
+
+    const anchorMessage = domHelper?.findMessageContainer(anchorNode);
+    const focusMessage = domHelper?.findMessageContainer(focusNode);
+
+    if (
+      anchorMessage &&
+      focusMessage &&
+      anchorMessage !== focusMessage
+    ) {
+      removePopup();
+      return;
+    }
+
+    const textToTranslate = selectedText;
+
+    createPopup(textToTranslate);
   });
 
   document.addEventListener("mousedown", (event) => {
