@@ -60,3 +60,33 @@ The project uses the following development tools and open-source technologies.
 - Git
 - Visual Studio Code
 - macOS / Windows / Linux
+
+## Project Status
+
+| Phase | Scope | Status |
+|---|---|---|
+| Phase 0 | Git repository and project setup | ✅ Complete |
+| Phase 1 | Backend foundation | ✅ Complete |
+| Phase 2 | Chrome extension popup UI | ✅ Complete |
+| Phase 3 | Extension → FastAPI communication | ✅ Complete |
+| Phase 4 | WhatsApp Web DOM integration | ✅ Complete |
+| Phase 5 | IndicLID evaluation and Malayalam routing | ✅ Complete |
+| Phase 6 | IndicXlit transliteration | ⬜ Next |
+
+## Current Architecture
+
+```text
+WhatsApp Web
+      ↓
+Chrome Extension
+      ↓
+Selected / detected message
+      ↓
+Language identification + routing
+      ↓
+English ─────────────────→ Leave unchanged
+      ↓
+Malayalam-family
+      ├── Native Malayalam ─────→ Translation path
+      ├── Roman Malayalam ──────→ IndicXlit → Translation
+      └── Mixed Malayalam-English → Malayalam-aware routing
