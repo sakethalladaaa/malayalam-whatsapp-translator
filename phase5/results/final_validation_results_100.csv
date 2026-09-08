@@ -1,0 +1,101 @@
+id,text,ground_truth,indiclid_code,candidate_v1_malayalam
+301,നിനക്ക് ഇന്ന് സുഖമാണോ?,malayalam,mal_Mlym,True
+302,ഞാൻ ഇന്ന് കോളേജിൽ പോകുന്നു.,malayalam,mal_Mlym,True
+303,നാളെ എപ്പോഴാണ് വരുന്നത്?,malayalam,mal_Mlym,True
+304,എനിക്ക് ഇപ്പോൾ സമയം ഇല്ല.,malayalam,mal_Mlym,True
+305,നീ ഭക്ഷണം കഴിച്ചോ?,malayalam,mal_Mlym,True
+306,ഇന്ന് മഴ പെയ്യുന്നുണ്ട്.,malayalam,mal_Mlym,True
+307,അവനോട് കാര്യം പറഞ്ഞോ?,malayalam,mal_Mlym,True
+308,ഞാൻ കുറച്ച് കഴിഞ്ഞ് വിളിക്കാം.,malayalam,mal_Mlym,True
+309,എവിടെയാ നീ ഇപ്പോൾ?,malayalam,mal_Mlym,True
+310,ശരി ചേട്ടാ 😄,malayalam,mal_Mlym,True
+311,എന്താ പരിപാടി?,malayalam,mal_Mlym,True
+312,എവിടെയാ?,malayalam,mal_Mlym,True
+313,വരുന്നുണ്ടോ?,malayalam,mal_Mlym,True
+314,ശരി 👍,malayalam,mal_Mlym,True
+315,നിനക്ക് സമയം ഉണ്ടോ?,malayalam,mal_Mlym,True
+316,ഞാൻ വീട്ടിലാണ്.,malayalam,mal_Mlym,True
+317,എപ്പോൾ എത്തും?,malayalam,mal_Mlym,True
+318,ഇത് എങ്ങനെ ചെയ്യണം?,malayalam,mal_Mlym,True
+319,ഒന്ന് കാത്തിരിക്കൂ.,malayalam,mal_Mlym,True
+320,പിന്നെ സംസാരിക്കാം.,malayalam,mal_Mlym,True
+321,എനിക്ക് മനസ്സിലായി.,malayalam,mal_Mlym,True
+322,നാളെ കാണാം.,malayalam,mal_Mlym,True
+323,വേഗം വാ.,malayalam,mal_Mlym,True
+324,എന്താണ് സംഭവിച്ചത്?,malayalam,mal_Mlym,True
+325,നീ ഇപ്പോൾ എവിടെയാണ്?,malayalam,mal_Mlym,True
+326,ninakku innu sukhamano?,roman_malayalam,mal_Latn,True
+327,njan innu college-il pokunnu,roman_malayalam,mal_Latn,True
+328,nale eppozha varunne?,roman_malayalam,mal_Latn,True
+329,enikku ippo samayam illa,roman_malayalam,mal_Latn,True
+330,nee food kazhicho?,roman_malayalam,guj_Latn,True
+331,innu mazha peyyunnundu,roman_malayalam,mal_Latn,True
+332,avanodu karyam paranyo?,roman_malayalam,mal_Latn,True
+333,kurachu kazhinju vilikkam,roman_malayalam,mal_Latn,True
+334,evideya nee ippo?,roman_malayalam,mal_Latn,True
+335,shari chetta 😄,roman_malayalam,tel_Latn,True
+336,entha paripadi?,roman_malayalam,tel_Latn,True
+337,evideya?,roman_malayalam,kan_Latn,True
+338,varunundo?,roman_malayalam,tel_Latn,True
+339,shari,roman_malayalam,snd_Latn,True
+340,nee samayam undo?,roman_malayalam,tel_Latn,True
+341,njan veettil aanu,roman_malayalam,mal_Latn,True
+342,eppozha ethunne?,roman_malayalam,mal_Latn,True
+343,ithu engane cheyyanam?,roman_malayalam,mal_Latn,True
+344,onnu kathirikko,roman_malayalam,mal_Latn,True
+345,pinne samsarikkam,roman_malayalam,mal_Latn,True
+346,enikku manasilayi,roman_malayalam,mal_Latn,True
+347,nale kanam,roman_malayalam,tel_Latn,True
+348,vegam vaa,roman_malayalam,pan_Latn,False
+349,entha sambhaviche?,roman_malayalam,tel_Latn,True
+350,nee ippo evideya?,roman_malayalam,guj_Latn,True
+351,ഇന്ന് meeting ഉണ്ടോ?,mixed,mal_Mlym,True
+352,നാളെ class online ആണോ?,mixed,eng_Latn,False
+353,എനിക്ക് assignment submit ചെയ്യണം.,mixed,kas_Latn,False
+354,ഇന്ന് college പോകുന്നുണ്ടോ?,mixed,mal_Mlym,True
+355,നമ്മുടെ meeting എത്ര മണിക്ക്?,mixed,mal_Mlym,True
+356,ഇപ്പോൾ busy ആണോ?,mixed,mal_Mlym,True
+357,innu meeting undo bro?,mixed,mal_Latn,True
+358,nale class undo?,mixed,tel_Latn,True
+359,assignment ready aayo?,mixed,urd_Latn,True
+360,njan later vilikkam okay?,mixed,mal_Latn,True
+361,ente phone charge illa,mixed,mal_Latn,True
+362,nee office-il aano,mixed,guj_Latn,True
+363,meeting eppo start cheyyum,mixed,mal_Latn,True
+364,project submit cheytho,mixed,mal_Latn,True
+365,class kazhinjittu call cheyyam,mixed,mal_Latn,True
+366,report ready aano,mixed,snd_Latn,True
+367,njan email ayakkam,mixed,mal_Latn,True
+368,tomorrow varan pattumo,mixed,mal_Latn,True
+369,lunch kazhichittu varam,mixed,mal_Latn,True
+370,video send cheyyu,mixed,mal_Latn,True
+371,project complete aayo?,mixed,guj_Latn,True
+372,deadline eppo aanu,mixed,mal_Latn,True
+373,file send cheytho?,mixed,kas_Latn,True
+374,njan meeting-il aanu,mixed,mal_Latn,True
+375,okay alle?,mixed,san_Latn,True
+376,How are you today?,english,eng_Latn,False
+377,Can you call me later?,english,eng_Latn,False
+378,I will reach home by 8.,english,eng_Latn,False
+379,Did you finish the assignment?,english,eng_Latn,False
+380,Let's meet tomorrow morning.,english,eng_Latn,False
+381,Are you coming to college today?,english,eng_Latn,False
+382,Send me the file when you get time.,english,eng_Latn,False
+383,"Bro I am outside, come fast.",english,eng_Latn,False
+384,Meeting at 5 pm?,english,eng_Latn,False
+385,Okay bro 👍,english,urd_Latn,False
+386,Can you send me the report?,english,eng_Latn,False
+387,I am waiting outside.,english,eng_Latn,False
+388,What time is the meeting?,english,eng_Latn,False
+389,Please call me when you arrive.,english,kok_Latn,False
+390,I have already completed the work.,english,eng_Latn,False
+391,We can discuss it tomorrow.,english,eng_Latn,False
+392,Are you coming with us?,english,eng_Latn,False
+393,I need the document today.,english,eng_Latn,False
+394,Let me know when you are free.,english,eng_Latn,False
+395,"Okay, I will see you there.",english,eng_Latn,False
+396,Please send the document.,english,eng_Latn,False
+397,I am outside right now.,english,eng_Latn,False
+398,What are you doing?,english,eng_Latn,False
+399,Please come inside.,english,other,False
+400,Let's talk tomorrow.,english,eng_Latn,False
