@@ -1,0 +1,31 @@
+id,roman_input,ground_truth_malayalam,category,source
+1,naale raavile varumo?,നാളെ രാവിലെ വരുമോ?,target_spelling,fresh_phase7_holdout
+2,evideyaa ningal?,എവിടെയാ നിങ്ങൾ?,target_spelling,fresh_phase7_holdout
+3,shariyano?,ശരിയാണോ?,target_spelling,fresh_phase7_holdout
+4,enthaanu sambhavam?,എന്താണ് സംഭവം?,target_spelling,fresh_phase7_holdout
+5,cheythu kazhinjo?,ചെയ്തു കഴിഞ്ഞോ?,target_spelling,fresh_phase7_holdout
+6,varunnundo nee?,വരുന്നുണ്ടോ നീ?,target_spelling,fresh_phase7_holdout
+7,njan ippo purathaanu,ഞാൻ ഇപ്പോൾ പുറത്താണ്,control_conversational,fresh_phase7_holdout
+8,enikku nale exam undu,എനിക്ക് നാളെ പരീക്ഷ ഉണ്ട്,control_conversational,fresh_phase7_holdout
+9,nee evidunnu vannu?,നീ എവിടുന്ന് വന്നു?,control_conversational,fresh_phase7_holdout
+10,nammal pinne kaanam,നമ്മൾ പിന്നെ കാണാം,control_conversational,fresh_phase7_holdout
+11,avan veettil undo?,അവൻ വീട്ടിൽ ഉണ്ടോ?,control_conversational,fresh_phase7_holdout
+12,enikku kurachu neram venam,എനിക്ക് കുറച്ച് നേരം വേണം,control_conversational,fresh_phase7_holdout
+13,udane vaa,ഉടനെ വാ,short_chat,fresh_phase7_holdout
+14,enthaa?,എന്താ?,short_chat,fresh_phase7_holdout
+15,evidaa?,എവിടെയാ?,short_chat,fresh_phase7_holdout
+16,ok aayi,ഓകെ ആയി,short_chat,fresh_phase7_holdout
+17,poi vaa,പോയി വാ,short_chat,fresh_phase7_holdout
+18,ariyamo?,അറിയാമോ?,short_chat,fresh_phase7_holdout
+19,meeting kazhinjo?,മീറ്റിംഗ് കഴിഞ്ഞോ?,mixed_chat,fresh_phase7_holdout
+20,njan later message ayakkam,ഞാൻ ലേറ്റർ മെസേജ് അയക്കാം,mixed_chat,fresh_phase7_holdout
+21,class cancel aayo?,ക്ലാസ് ക്യാൻസൽ ആയോ?,mixed_chat,fresh_phase7_holdout
+22,oru minute wait cheyy,ഒരു മിനിറ്റ് വെയിറ്റ് ചെയ്യ്,mixed_chat,fresh_phase7_holdout
+23,project ready aakkiyo?,പ്രോജക്ട് റെഡി ആക്കിയോ?,mixed_chat,fresh_phase7_holdout
+24,call kazhinjittu parayam,കോൾ കഴിഞ്ഞിട്ട് പറയാം,mixed_chat,fresh_phase7_holdout
+25,super aanu bro,സൂപ്പർ ആണ് ബ്രോ,social_chat,fresh_phase7_holdout
+26,adipoli da,അടിപൊളി ഡാ,social_chat,fresh_phase7_holdout
+27,kidu scene,കിടു സീൻ,social_chat,fresh_phase7_holdout
+28,polichu mone,പൊളിച്ചു മോനെ,social_chat,fresh_phase7_holdout
+29,entha mass!,എന്താ മാസ്സ്!,social_chat,fresh_phase7_holdout
+30,poli aayittundu,പൊളി ആയിട്ടുണ്ട്,social_chat,fresh_phase7_holdout

@@ -1,0 +1,31 @@
+id,roman_input,ground_truth_malayalam,category,source,predicted_malayalam,exact_match,normalized_similarity,normalized_prediction,normalized_exact_match,similarity_delta,similarity_before
+1,naale raavile varumo?,നാളെ രാവിലെ വരുമോ?,target_spelling,fresh_phase7_holdout,നാളെ രാവിലെ വരുമോ?,True,1.0,നാളെ രാവിലെ വരുമോ?,True,0.0,1.0
+2,evideyaa ningal?,എവിടെയാ നിങ്ങൾ?,target_spelling,fresh_phase7_holdout,എവിടെയാ നിങ്ങൾ?,True,1.0,എവിടെയാ നിങ്ങൾ?,True,0.0,1.0
+3,shariyano?,ശരിയാണോ?,target_spelling,fresh_phase7_holdout,ശരിയാനോ?,False,0.875,ശരിയാനോ?,False,0.0,0.875
+4,enthaanu sambhavam?,എന്താണ് സംഭവം?,target_spelling,fresh_phase7_holdout,എന്താണ് സംഭവം?,True,1.0,എന്താണ് സംഭവം?,True,0.0,1.0
+5,cheythu kazhinjo?,ചെയ്തു കഴിഞ്ഞോ?,target_spelling,fresh_phase7_holdout,ചെയ്തു കഴിഞ്ഞോ?,True,1.0,ചെയ്തു കഴിഞ്ഞോ?,True,0.0,1.0
+6,varunnundo nee?,വരുന്നുണ്ടോ നീ?,target_spelling,fresh_phase7_holdout,വരുന്നുണ്ടോ നീ?,True,1.0,വരുന്നുണ്ടോ നീ?,True,0.0,1.0
+7,njan ippo purathaanu,ഞാൻ ഇപ്പോൾ പുറത്താണ്,control_conversational,fresh_phase7_holdout,ഞാൻ ഇപ്പോ പുറത്താണ്,False,0.9743589743589743,ഞാൻ ഇപ്പോ പുറത്താണ്,False,0.0,0.9743589743589743
+8,enikku nale exam undu,എനിക്ക് നാളെ പരീക്ഷ ഉണ്ട്,control_conversational,fresh_phase7_holdout,എനിക്കു നാലെ എക്സാം ഉണ്ടു,False,0.72,എനിക്കു നാലെ എക്സാം ഉണ്ടു,False,0.0,0.72
+9,nee evidunnu vannu?,നീ എവിടുന്ന് വന്നു?,control_conversational,fresh_phase7_holdout,നീ എവിടുന്നു വന്നു?,False,0.9473684210526315,നീ എവിടുന്നു വന്നു?,False,0.0,0.9473684210526315
+10,nammal pinne kaanam,നമ്മൾ പിന്നെ കാണാം,control_conversational,fresh_phase7_holdout,നമ്മൽ പിന്നെ കാണം,False,0.9142857142857143,നമ്മൽ പിന്നെ കാണം,False,0.0,0.9142857142857143
+11,avan veettil undo?,അവൻ വീട്ടിൽ ഉണ്ടോ?,control_conversational,fresh_phase7_holdout,അവൻ വീട്ടിൽ ഉണ്ടോ?,True,1.0,അവൻ വീട്ടിൽ ഉണ്ടോ?,True,0.0,1.0
+12,enikku kurachu neram venam,എനിക്ക് കുറച്ച് നേരം വേണം,control_conversational,fresh_phase7_holdout,എനിക്കു കുറച്ച് നേരം വേണം,False,0.96,എനിക്കു കുറച്ച് നേരം വേണം,False,0.0,0.96
+13,udane vaa,ഉടനെ വാ,short_chat,fresh_phase7_holdout,ഉടനെ വാ,True,1.0,ഉടനെ വാ,True,0.0,1.0
+14,enthaa?,എന്താ?,short_chat,fresh_phase7_holdout,എന്താ?,True,1.0,എന്താ?,True,0.0,1.0
+15,evidaa?,എവിടെയാ?,short_chat,fresh_phase7_holdout,എവിടാ?,False,0.8571428571428571,എവിടാ?,False,0.0,0.8571428571428571
+16,ok aayi,ഓകെ ആയി,short_chat,fresh_phase7_holdout,ഒക് ആയി,False,0.7142857142857143,ഒക് ആയി,False,0.0,0.7142857142857143
+17,poi vaa,പോയി വാ,short_chat,fresh_phase7_holdout,പോയി വാ,True,1.0,പോയി വാ,True,0.0,1.0
+18,ariyamo?,അറിയാമോ?,short_chat,fresh_phase7_holdout,അറിയമോ?,False,0.9333333333333333,അറിയമോ?,False,0.0,0.9333333333333333
+19,meeting kazhinjo?,മീറ്റിംഗ് കഴിഞ്ഞോ?,mixed_chat,fresh_phase7_holdout,മീറ്റിംഗ് കഴിഞ്ഞോ?,True,1.0,മീറ്റിംഗ് കഴിഞ്ഞോ?,True,0.0,1.0
+20,njan later message ayakkam,ഞാൻ ലേറ്റർ മെസേജ് അയക്കാം,mixed_chat,fresh_phase7_holdout,ഞാൻ ലേറ്റർ മെസേജ് അയക്കം,False,0.9795918367346939,ഞാൻ ലേറ്റർ മെസേജ് അയക്കം,False,0.0,0.9795918367346939
+21,class cancel aayo?,ക്ലാസ് ക്യാൻസൽ ആയോ?,mixed_chat,fresh_phase7_holdout,ക്ലാസ് കാൻസൽ ആയോ?,False,0.9444444444444444,ക്ലാസ് കാൻസൽ ആയോ?,False,0.0,0.9444444444444444
+22,oru minute wait cheyy,ഒരു മിനിറ്റ് വെയിറ്റ് ചെയ്യ്,mixed_chat,fresh_phase7_holdout,ഒരു മിന്യൂട്ട് വെയ്റ്റ് ചെയ്യ്,False,0.8275862068965517,ഒരു മിന്യൂട്ട് വെയ്റ്റ് ചെയ്യ്,False,0.0,0.8275862068965517
+23,project ready aakkiyo?,പ്രോജക്ട് റെഡി ആക്കിയോ?,mixed_chat,fresh_phase7_holdout,പ്രൊജക്ട് റെഡി ആക്കിയോ?,False,0.9565217391304348,പ്രൊജക്ട് റെഡി ആക്കിയോ?,False,0.0,0.9565217391304348
+24,call kazhinjittu parayam,കോൾ കഴിഞ്ഞിട്ട് പറയാം,mixed_chat,fresh_phase7_holdout,കോൾ കഴിഞ്ഞിട്ടു പറയം,False,0.926829268292683,കോൾ കഴിഞ്ഞിട്ടു പറയം,False,0.0,0.926829268292683
+25,super aanu bro,സൂപ്പർ ആണ് ബ്രോ,social_chat,fresh_phase7_holdout,സൂപ്പർ ആണ് ബ്രോ,True,1.0,സൂപ്പർ ആണ് ബ്രോ,True,0.0,1.0
+26,adipoli da,അടിപൊളി ഡാ,social_chat,fresh_phase7_holdout,അടിപൊളി ഡിഎ,False,0.8571428571428571,അടിപൊളി ഡിഎ,False,0.0,0.8571428571428571
+27,kidu scene,കിടു സീൻ,social_chat,fresh_phase7_holdout,കിടു സീൻ,True,1.0,കിടു സീൻ,True,0.0,1.0
+28,polichu mone,പൊളിച്ചു മോനെ,social_chat,fresh_phase7_holdout,പൊളിച്ചു മോനെ,True,1.0,പൊളിച്ചു മോനെ,True,0.0,1.0
+29,entha mass!,എന്താ മാസ്സ്!,social_chat,fresh_phase7_holdout,എന്ത മാസ്!,False,0.8695652173913043,എന്ത മാസ്!,False,0.0,0.8695652173913043
+30,poli aayittundu,പൊളി ആയിട്ടുണ്ട്,social_chat,fresh_phase7_holdout,പോളി ആയിട്ടുണ്ട്,False,0.9375,പോളി ആയിട്ടുണ്ട്,False,0.0,0.9375
