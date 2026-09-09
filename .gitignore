@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Phase 6 IndicXlit environment
+.venv-indicxlit/

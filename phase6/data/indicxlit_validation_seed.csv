@@ -1,0 +1,13 @@
+id,roman_input,ground_truth_malayalam,category
+1,ninakku innu sukhamano?,നിനക്ക് ഇന്ന് സുഖമാണോ?,normal_conversational
+2,njan innu college-il pokunnu,ഞാൻ ഇന്ന് കോളേജിൽ പോകുന്നു,normal_conversational
+3,nee food kazhicho?,നീ ഫുഡ് കഴിച്ചോ?,mixed_chat
+4,evideya?,എവിടെയാ?,short_chat
+5,evideyaa?,എവിടെയാ?,spelling_variation
+6,shari chetta,ശരി ചേട്ടാ,chat_expression
+7,shari chettaa,ശരി ചേട്ടാ,spelling_variation
+8,entha paripadi?,എന്താ പരിപാടി?,question
+9,vegam vaa,വേഗം വാ,request
+10,nale class undo?,നാളെ ക്ലാസ് ഉണ്ടോ?,question
+11,naale class undo?,നാളെ ക്ലാസ് ഉണ്ടോ?,spelling_variation
+12,assignment ready aayo?,അസൈൻമെന്റ് റെഡി ആയോ?,mixed_chat

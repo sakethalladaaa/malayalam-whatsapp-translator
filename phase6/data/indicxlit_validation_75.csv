@@ -1,0 +1,76 @@
+id,roman_input,ground_truth_malayalam,category,source
+1,ninakku innu sukhamano?,നിനക്ക് ഇന്ന് സുഖമാണോ?,normal_conversational,manual_project_validation
+2,njan innu college-il pokunnu,ഞാൻ ഇന്ന് കോളേജിൽ പോകുന്നു,normal_conversational,manual_project_validation
+3,nee evideya ippol?,നീ എവിടെയാ ഇപ്പോൾ?,normal_conversational,manual_project_validation
+4,njan veettil aanu,ഞാൻ വീട്ടിൽ ആണ്,normal_conversational,manual_project_validation
+5,nee food kazhicho?,നീ ഫുഡ് കഴിച്ചോ?,normal_conversational,manual_project_validation
+6,evideya?,എവിടെയാ?,short_chat,manual_project_validation
+7,varunundo?,വരുന്നുണ്ടോ?,short_chat,manual_project_validation
+8,shari,ശരി,short_chat,manual_project_validation
+9,vaa,വാ,short_chat,manual_project_validation
+10,entha?,എന്താ?,short_chat,manual_project_validation
+11,naale varumo?,നാളെ വരുമോ?,spelling_variation,manual_project_validation
+12,naale class undo?,നാളെ ക്ലാസ് ഉണ്ടോ?,spelling_variation,manual_project_validation
+13,evideyaa nee?,എവിടെയാ നീ?,spelling_variation,manual_project_validation
+14,shari chettaa,ശരി ചേട്ടാ,spelling_variation,manual_project_validation
+15,enthaaa paripadi?,എന്താ പരിപാടി?,spelling_variation,manual_project_validation
+16,shari chetta,ശരി ചേട്ടാ,chat_expression,manual_project_validation
+17,entha paripadi?,എന്താ പരിപാടി?,chat_expression,manual_project_validation
+18,pinne samsarikkam,പിന്നെ സംസാരിക്കാം,chat_expression,manual_project_validation
+19,okay alle?,ഓകെ അല്ലേ?,chat_expression,manual_project_validation
+20,bro vegam vaa,ബ്രോ വേഗം വാ,chat_expression,manual_project_validation
+21,nale meeting undo bro?,നാളെ മീറ്റിംഗ് ഉണ്ടോ ബ്രോ?,mixed_chat,manual_project_validation
+22,assignment ready aayo?,അസൈൻമെന്റ് റെഡി ആയോ?,mixed_chat,manual_project_validation
+23,njan later vilikkam okay?,ഞാൻ ലേറ്റർ വിളിക്കാം ഓകെ?,mixed_chat,manual_project_validation
+24,project submit cheytho?,പ്രോജക്ട് സബ്മിറ്റ് ചെയ്തോ?,mixed_chat,manual_project_validation
+25,report ready aano?,റിപ്പോർട്ട് റെഡി ആണോ?,mixed_chat,manual_project_validation
+26,njan varam,ഞാൻ വരാം,normal_conversational,manual_project_validation
+27,njan ippo busy aanu,ഞാൻ ഇപ്പോൾ ബിസി ആണ്,normal_conversational,manual_project_validation
+28,ningal evide thamasikkunnu?,നിങ്ങൾ എവിടെ താമസിക്കുന്നു?,normal_conversational,manual_project_validation
+29,enikku kurachu samayam venam,എനിക്ക് കുറച്ച് സമയം വേണം,normal_conversational,manual_project_validation
+30,avan innu varilla,അവൻ ഇന്ന് വരില്ല,normal_conversational,manual_project_validation
+31,innale entha sambhaviche?,ഇന്നലെ എന്താ സംഭവിച്ചേ?,question,manual_project_validation
+32,nee eppozha ethunne?,നീ എപ്പോഴാ എത്തുന്നേ?,question,manual_project_validation
+33,ithu engane cheyyanam?,ഇത് എങ്ങനെ ചെയ്യണം?,question,manual_project_validation
+34,nee enne vilicho?,നീ എന്നെ വിളിച്ചോ?,question,manual_project_validation
+35,innu mazha peyyumo?,ഇന്ന് മഴ പെയ്യുമോ?,question,manual_project_validation
+36,vegam vaa,വേഗം വാ,request,manual_project_validation
+37,onnu kathirikko,ഒന്ന് കാത്തിരിക്കൂ,request,manual_project_validation
+38,file send cheyyu,ഫയൽ സെൻഡ് ചെയ്യൂ,request,manual_project_validation
+39,enne oru call cheyyu,എന്നെ ഒരു കോൾ ചെയ്യൂ,request,manual_project_validation
+40,inside vaa,ഇൻസൈഡ് വാ,request,manual_project_validation
+41,polichu,പൊളിച്ചു,social_chat,manual_project_validation
+42,kidu aanu,കിടു ആണ്,social_chat,manual_project_validation
+43,super alle?,സൂപ്പർ അല്ലേ?,social_chat,manual_project_validation
+44,scene illa,സീൻ ഇല്ല,social_chat,manual_project_validation
+45,pwoli macha,പൊളി മച്ചാ,social_chat,manual_project_validation
+46,nale class undenkil enne parayu,നാളെ ക്ലാസ് ഉണ്ടെങ്കിൽ എന്നെ പറയൂ,longer_message,manual_project_validation
+47,njan college kazhinju veettil ethiyittu vilikkam,ഞാൻ കോളേജ് കഴിഞ്ഞ് വീട്ടിൽ എത്തിയിട്ട് വിളിക്കാം,longer_message,manual_project_validation
+48,nee free aanel vaikunneram namukku purathu pokam,നീ ഫ്രീ ആണെങ്കിൽ വൈകുന്നേരം നമുക്ക് പുറത്തു പോകാം,longer_message,manual_project_validation
+49,assignment complete cheythittu teacherinu send cheyyanam,അസൈൻമെന്റ് കംപ്ലീറ്റ് ചെയ്തിട്ട് ടീച്ചറിന് സെൻഡ് ചെയ്യണം,longer_message,manual_project_validation
+50,innu time kittiyal nammal projectinte baaki work cheyyam,ഇന്ന് ടൈം കിട്ടിയാൽ നമ്മൾ പ്രോജക്ടിന്റെ ബാക്കി വർക്ക് ചെയ്യാം,longer_message,manual_project_validation
+51,evida?,എവിടെയാ?,short_chat,manual_project_validation
+52,evideyaa?,എവിടെയാ?,spelling_variation,manual_project_validation
+53,enthada?,എന്താടാ?,chat_expression,manual_project_validation
+54,enthanu?,എന്താണ്?,short_chat,manual_project_validation
+55,entha cheyyunne?,എന്താ ചെയ്യുന്നേ?,normal_conversational,manual_project_validation
+56,ippo varum,ഇപ്പോൾ വരും,normal_conversational,manual_project_validation
+57,nee kazhicho?,നീ കഴിച്ചോ?,normal_conversational,manual_project_validation
+58,njan vannu,ഞാൻ വന്നു,normal_conversational,manual_project_validation
+59,oru min wait cheyyu,ഒരു മിനിറ്റ് വെയിറ്റ് ചെയ്യൂ,mixed_chat,manual_project_validation
+60,call cheyyamo?,കോൾ ചെയ്യാമോ?,mixed_chat,manual_project_validation
+61,pls vegam vaa,പ്ലീസ് വേഗം വാ,mixed_chat,manual_project_validation
+62,ok alle bro?,ഓകെ അല്ലേ ബ്രോ?,chat_expression,manual_project_validation
+63,ayyo entha patti?,അയ്യോ എന്താ പറ്റി?,social_chat,manual_project_validation
+64,poli alle?,പൊളി അല്ലേ?,social_chat,manual_project_validation
+65,adipoli,അടിപൊളി,social_chat,manual_project_validation
+66,ha ha sheri,ഹാ ഹാ ശരി,chat_expression,manual_project_validation
+67,naale ravile varam,നാളെ രാവിലെ വരാം,spelling_variation,manual_project_validation
+68,naale ravile eppo varum?,നാളെ രാവിലെ എപ്പോ വരും?,question,manual_project_validation
+69,innale vilichirunno?,ഇന്നലെ വിളിച്ചിരുന്നോ?,question,manual_project_validation
+70,nee enne help cheyyumo?,നീ എന്നെ ഹെൽപ്പ് ചെയ്യുമോ?,request,manual_project_validation
+71,oru msg ayakku,ഒരു മെസേജ് അയക്കൂ,request,manual_project_validation
+72,file onnu nokku,ഫയൽ ഒന്ന് നോക്കൂ,request,manual_project_validation
+73,wait cheyyu njan ippo varam,വെയിറ്റ് ചെയ്യൂ ഞാൻ ഇപ്പോൾ വരാം,longer_message,manual_project_validation
+74,njan free aayal ninne vilikkam,ഞാൻ ഫ്രീ ആയാൽ നിന്നെ വിളിക്കാം,longer_message,manual_project_validation
+75,project kazhinjittu namukku onnichu discuss cheyyam,പ്രോജക്ട് കഴിഞ്ഞിട്ട് നമുക്ക് ഒന്നിച്ച് ഡിസ്കസ് ചെയ്യാം,longer_message,manual_project_validation
