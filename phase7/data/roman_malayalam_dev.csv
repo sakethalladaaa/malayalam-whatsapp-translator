@@ -1,0 +1,21 @@
+id,roman_input,ground_truth_malayalam,category,source
+1,nale varum,നാളെ വരും,spelling_variant,phase7_development
+2,naale varum,നാളെ വരും,spelling_variant,phase7_development
+3,evida nee,എവിടാ നീ,spelling_variant,phase7_development
+4,evideyaa nee,എവിടെയാ നീ,spelling_variant,phase7_development
+5,shari alle,ശരി അല്ലേ,short_chat,phase7_development
+6,sheri alle,ശരി അല്ലേ,short_chat,phase7_development
+7,ariyamo,അറിയാമോ,short_chat,phase7_development
+8,ariyaamo,അറിയാമോ,short_chat,phase7_development
+9,enthanu ithu,എന്താണ് ഇത്,conversational,phase7_development
+10,enthaanu ithu,എന്താണ് ഇത്,conversational,phase7_development
+11,innu varum,ഇന്ന് വരും,conversational,phase7_development
+12,inu varum,ഇന്ന് വരും,conversational,phase7_development
+13,enikku samayam venam,എനിക്ക് സമയം വേണം,conversational,phase7_development
+14,enikk samayam venam,എനിക്ക് സമയം വേണം,conversational,phase7_development
+15,vilikkam pinne,വിളിക്കാം പിന്നെ,conversational,phase7_development
+16,vilikkaam pinne,വിളിക്കാം പിന്നെ,conversational,phase7_development
+17,cheyyu vegam,ചെയ്യൂ വേഗം,request,phase7_development
+18,cheyyuu vegam,ചെയ്യൂ വേഗം,request,phase7_development
+19,nammal pinne kaanalo,നമ്മൾ പിന്നെ കാണാലോ?,conversational,phase7_development
+20,nammal pinne kaanaam,നമ്മൾ പിന്നെ കാണാം,conversational,phase7_development

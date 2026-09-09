@@ -1,0 +1,31 @@
+id,roman_input,ground_truth_malayalam,category,raw_output,normalized_input,normalized_output,raw_exact_match,normalized_exact_match,raw_similarity,normalized_similarity,similarity_delta
+1,naale raavile varumo?,നാളെ രാവിലെ വരുമോ?,target_spelling,നാളെ രാവിലെ വരുമോ?,naale raavile varumo?,നാളെ രാവിലെ വരുമോ?,True,True,1.0,1.0,0.0
+2,evideyaa ningal?,എവിടെയാ നിങ്ങൾ?,target_spelling,എവിടെയാ നിങ്ങൾ?,evideyaa ningal?,എവിടെയാ നിങ്ങൾ?,True,True,1.0,1.0,0.0
+3,shariyano?,ശരിയാണോ?,target_spelling,ശരിയാനോ?,shariyano?,ശരിയാനോ?,False,False,0.875,0.875,0.0
+4,enthaanu sambhavam?,എന്താണ് സംഭവം?,target_spelling,എന്താണ് സംഭവം?,enthaanu sambhavam?,എന്താണ് സംഭവം?,True,True,1.0,1.0,0.0
+5,cheythu kazhinjo?,ചെയ്തു കഴിഞ്ഞോ?,target_spelling,ചെയ്തു കഴിഞ്ഞോ?,cheythu kazhinjo?,ചെയ്തു കഴിഞ്ഞോ?,True,True,1.0,1.0,0.0
+6,varunnundo nee?,വരുന്നുണ്ടോ നീ?,target_spelling,വരുന്നുണ്ടോ നീ?,varunnundo nee?,വരുന്നുണ്ടോ നീ?,True,True,1.0,1.0,0.0
+7,njan ippo purathaanu,ഞാൻ ഇപ്പോൾ പുറത്താണ്,control_conversational,ഞാൻ ഇപ്പോ പുറത്താണ്,njan ippo purathaanu,ഞാൻ ഇപ്പോ പുറത്താണ്,False,False,0.9743589743589743,0.9743589743589743,0.0
+8,enikku nale exam undu,എനിക്ക് നാളെ പരീക്ഷ ഉണ്ട്,control_conversational,എനിക്കു നാലെ എക്സാം ഉണ്ടു,enikku naale exam undu,എനിക്കു നാളെ എക്സാം ഉണ്ടു,False,False,0.72,0.76,0.040000000000000036
+9,nee evidunnu vannu?,നീ എവിടുന്ന് വന്നു?,control_conversational,നീ എവിടുന്നു വന്നു?,nee evidunnu vannu?,നീ എവിടുന്നു വന്നു?,False,False,0.9473684210526315,0.9473684210526315,0.0
+10,nammal pinne kaanam,നമ്മൾ പിന്നെ കാണാം,control_conversational,നമ്മൽ പിന്നെ കാണം,nammal pinne kaanam,നമ്മൽ പിന്നെ കാണം,False,False,0.9142857142857143,0.9142857142857143,0.0
+11,avan veettil undo?,അവൻ വീട്ടിൽ ഉണ്ടോ?,control_conversational,അവൻ വീട്ടിൽ ഉണ്ടോ?,avan veettil undo?,അവൻ വീട്ടിൽ ഉണ്ടോ?,True,True,1.0,1.0,0.0
+12,enikku kurachu neram venam,എനിക്ക് കുറച്ച് നേരം വേണം,control_conversational,എനിക്കു കുറച്ച് നേരം വേണം,enikku kurachu neram venam,എനിക്കു കുറച്ച് നേരം വേണം,False,False,0.96,0.96,0.0
+13,udane vaa,ഉടനെ വാ,short_chat,ഉടനെ വാ,udane vaa,ഉടനെ വാ,True,True,1.0,1.0,0.0
+14,enthaa?,എന്താ?,short_chat,എന്താ?,enthaa?,എന്താ?,True,True,1.0,1.0,0.0
+15,evidaa?,എവിടെയാ?,short_chat,എവിടാ?,evidaa?,എവിടാ?,False,False,0.8571428571428571,0.8571428571428571,0.0
+16,ok aayi,ഓകെ ആയി,short_chat,ഒക് ആയി,ok aayi,ഒക് ആയി,False,False,0.7142857142857143,0.7142857142857143,0.0
+17,poi vaa,പോയി വാ,short_chat,പോയി വാ,poi vaa,പോയി വാ,True,True,1.0,1.0,0.0
+18,ariyamo?,അറിയാമോ?,short_chat,അറിയമോ?,ariyaamo?,അറിയാമോ?,False,True,0.9333333333333333,1.0,0.06666666666666665
+19,meeting kazhinjo?,മീറ്റിംഗ് കഴിഞ്ഞോ?,mixed_chat,മീറ്റിംഗ് കഴിഞ്ഞോ?,meeting kazhinjo?,മീറ്റിംഗ് കഴിഞ്ഞോ?,True,True,1.0,1.0,0.0
+20,njan later message ayakkam,ഞാൻ ലേറ്റർ മെസേജ് അയക്കാം,mixed_chat,ഞാൻ ലേറ്റർ മെസേജ് അയക്കം,njan later message ayakkam,ഞാൻ ലേറ്റർ മെസേജ് അയക്കം,False,False,0.9795918367346939,0.9795918367346939,0.0
+21,class cancel aayo?,ക്ലാസ് ക്യാൻസൽ ആയോ?,mixed_chat,ക്ലാസ് കാൻസൽ ആയോ?,class cancel aayo?,ക്ലാസ് കാൻസൽ ആയോ?,False,False,0.9444444444444444,0.9444444444444444,0.0
+22,oru minute wait cheyy,ഒരു മിനിറ്റ് വെയിറ്റ് ചെയ്യ്,mixed_chat,ഒരു മിന്യൂട്ട് വെയ്റ്റ് ചെയ്യ്,oru minute wait cheyy,ഒരു മിന്യൂട്ട് വെയ്റ്റ് ചെയ്യ്,False,False,0.8275862068965517,0.8275862068965517,0.0
+23,project ready aakkiyo?,പ്രോജക്ട് റെഡി ആക്കിയോ?,mixed_chat,പ്രൊജക്ട് റെഡി ആക്കിയോ?,project ready aakkiyo?,പ്രൊജക്ട് റെഡി ആക്കിയോ?,False,False,0.9565217391304348,0.9565217391304348,0.0
+24,call kazhinjittu parayam,കോൾ കഴിഞ്ഞിട്ട് പറയാം,mixed_chat,കോൾ കഴിഞ്ഞിട്ടു പറയം,call kazhinjittu parayam,കോൾ കഴിഞ്ഞിട്ടു പറയം,False,False,0.926829268292683,0.926829268292683,0.0
+25,super aanu bro,സൂപ്പർ ആണ് ബ്രോ,social_chat,സൂപ്പർ ആണ് ബ്രോ,super aanu bro,സൂപ്പർ ആണ് ബ്രോ,True,True,1.0,1.0,0.0
+26,adipoli da,അടിപൊളി ഡാ,social_chat,അടിപൊളി ഡിഎ,adipoli da,അടിപൊളി ഡിഎ,False,False,0.8571428571428571,0.8571428571428571,0.0
+27,kidu scene,കിടു സീൻ,social_chat,കിടു സീൻ,kidu scene,കിടു സീൻ,True,True,1.0,1.0,0.0
+28,polichu mone,പൊളിച്ചു മോനെ,social_chat,പൊളിച്ചു മോനെ,polichu mone,പൊളിച്ചു മോനെ,True,True,1.0,1.0,0.0
+29,entha mass!,എന്താ മാസ്സ്!,social_chat,എന്ത മാസ്!,entha mass!,എന്ത മാസ്!,False,False,0.8695652173913043,0.8695652173913043,0.0
+30,poli aayittundu,പൊളി ആയിട്ടുണ്ട്,social_chat,പോളി ആയിട്ടുണ്ട്,poli aayittundu,പോളി ആയിട്ടുണ്ട്,False,False,0.9375,0.9375,0.0

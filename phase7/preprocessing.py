@@ -22,6 +22,12 @@ NORMALIZATION_RULES: Final[dict[str, str]] = {
     "വിളിക്കം": "വിളിക്കാം",
 }
 
+ROMAN_NORMALIZATION_RULES: Final[dict[str, str]] = {
+    "nale": "naale",
+    "ariyamo": "ariyaamo",
+    "inu": "innu",
+}
+
 
 def normalize_malayalam(text: str) -> str:
     """
@@ -43,5 +49,27 @@ def normalize_malayalam(text: str) -> str:
             )
         else:
             normalized = normalized.replace(source, target)
+
+    return normalized
+
+
+def normalize_roman_malayalam(text: str) -> str:
+    """
+    Apply the Phase 7 Experiment 2 Roman Malayalam normalization candidate.
+
+    Rules are applied only to complete Roman tokens. The candidate was
+    selected using the separate Phase 7 development dataset.
+    """
+    if not text or not text.strip():
+        return ""
+
+    normalized = text.strip()
+
+    for source, target in ROMAN_NORMALIZATION_RULES.items():
+        normalized = re.sub(
+            rf"(?<!\w){re.escape(source)}(?!\w)",
+            target,
+            normalized,
+        )
 
     return normalized
