@@ -6,13 +6,13 @@ Evaluate a conservative Roman Malayalam preprocessing layer before IndicXlit.
 
 Pipeline under test:
 
-Roman Malayalam input -> preprocessing -> raw IndicXlit -> Malayalam script
+Roman Malayalam input -> raw IndicXlit -> Malayalam post-transliteration normalization
 
 Phase 5 candidate_v1 remains frozen. Phase 6 raw IndicXlit behavior remains the baseline.
 
 ## First Experiment
 
-The first experiment focuses only on conservative Roman spelling normalization, especially repeated-vowel and spelling variants observed in Phase 6.
+The first experiment focuses on conservative Malayalam post-transliteration surface-form normalization using patterns observed in Phase 6.
 
 No slang lexicon, candidate reranking, English-token preservation, or model changes are included unless fresh evidence justifies a later experiment.
 
