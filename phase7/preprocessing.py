@@ -1,11 +1,9 @@
 """
-Phase 7 — Conservative Malayalam post-transliteration normalization.
+Phase 7 — Conservative Roman input and Malayalam output normalization.
 
-This module operates only on Malayalam-script output produced by IndicXlit.
-It does not modify Roman input, language routing, or the IndicXlit model.
-
-Rules are limited to surface-form corrections supported by frozen Phase 6
-failure evidence.
+Roman input rules come from the Phase 7 development experiment.
+Malayalam output rules come from historical Phase 6 failure evidence.
+Language routing and the IndicXlit model are unchanged.
 """
 
 from __future__ import annotations
@@ -40,15 +38,16 @@ def normalize_malayalam(text: str) -> str:
 
     normalized = text.strip()
 
+    # Include Malayalam combining marks and joiners in token boundaries.
+    # Python's \w alone does not include all of these characters.
+    token_char = r"[\w\u0D00-\u0D7F\u200C\u200D]"
+
     for source, target in NORMALIZATION_RULES.items():
-        if source == "ചെയ്യു":
-            normalized = re.sub(
-                rf"(?<!\S){re.escape(source)}(?!\S)",
-                target,
-                normalized,
-            )
-        else:
-            normalized = normalized.replace(source, target)
+        normalized = re.sub(
+            rf"(?<!{token_char}){re.escape(source)}(?!{token_char})",
+            target,
+            normalized,
+        )
 
     return normalized
 

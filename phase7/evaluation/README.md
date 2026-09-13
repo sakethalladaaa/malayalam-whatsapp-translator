@@ -2,19 +2,33 @@
 
 ## Scope
 
-Evaluate a conservative Roman Malayalam preprocessing layer before IndicXlit.
+Evaluate two separate normalization interventions around IndicXlit:
 
-Pipeline under test:
+- Experiment 1: Roman input -> raw IndicXlit -> Malayalam output normalization.
+- Experiment 2: Roman input -> Roman token normalization -> IndicXlit.
 
-Roman Malayalam input -> raw IndicXlit -> Malayalam post-transliteration normalization
+See `EXPERIMENT_1_RESULT.md`, `EXPERIMENT_2_DEV_RESULT.md`, and
+`EXPERIMENT_2_RESULT.md` for the historical evaluations.
 
-Phase 5 candidate_v1 remains frozen. Phase 6 raw IndicXlit behavior remains the baseline.
+The experiments do not establish the quality of applying both interventions
+together.
 
-## First Experiment
+Phase 5 candidate_v1 remains frozen. Phase 6 raw IndicXlit behavior remains
+the baseline. No model weights or inference settings are changed.
 
-The first experiment focuses on conservative Malayalam post-transliteration surface-form normalization using patterns observed in Phase 6.
+## Experiments
 
-No slang lexicon, candidate reranking, English-token preservation, or model changes are included unless fresh evidence justifies a later experiment.
+Experiment 1 used four Malayalam surface-form corrections derived from
+historical Phase 6 failure evidence. It changed none of the 30 Phase 7
+holdout outputs.
+
+Experiment 2 used three complete-token Roman rules selected on a separate
+20-sample development set: `nale` -> `naale`, `ariyamo` -> `ariyaamo`, and
+`inu` -> `innu`. The rule `evida` -> `evideyaa` was rejected after a
+development regression.
+
+No slang lexicon, candidate reranking, or English-token preservation strategy
+was added.
 
 ## Evaluation Policy
 
@@ -28,3 +42,33 @@ No slang lexicon, candidate reranking, English-token preservation, or model chan
 ## Acceptance Criteria
 
 A preprocessing change is considered promising only if it improves the fresh-holdout baseline on the targeted spelling/short-chat cases without causing material regression on the remaining cases.
+
+## Post-experiment Boundary Fix
+
+After the recorded experiments, regression tests exposed two implementation
+issues:
+
+- Substring replacement corrupted longer words, such as `ഒന്നും`.
+- The whitespace-only boundary left standalone `ചെയ്യു?` unchanged.
+
+All four Malayalam rules now use a shared token boundary that includes word
+characters, Malayalam Unicode characters, and ZWNJ/ZWJ joiners. This preserves
+longer words while allowing the registered forms next to punctuation such as
+question marks, commas, exclamation marks, and parentheses.
+
+The rule dictionaries and Roman normalization behavior remain unchanged.
+Roman rules remain case-sensitive.
+
+Validation: 10 preprocessing unit tests passed locally. Coverage includes
+existing Malayalam corrections, longer-word preservation, punctuation,
+Roman token boundaries, case preservation, and empty/unchanged inputs.
+
+This is a code-correctness fix, not a new transliteration-quality result.
+Historical experiment reports and result CSVs describe the earlier
+implementation; their metrics must not be attributed to this revised version.
+No model evaluation was rerun for this fix, and the frozen datasets and
+historical result files were not modified.
+
+The evaluated Phase 7 holdout remains frozen. Any further candidate selection
+requires separate development evidence; a fresh final evaluation set is needed
+for new quality claims.

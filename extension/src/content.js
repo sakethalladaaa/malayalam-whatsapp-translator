@@ -2,6 +2,7 @@
   "use strict";
 
   const API_URL = "http://127.0.0.1:8000/translate";
+  const REQUEST_TIMEOUT_MS = 15000;
   let popup = null;
 
   function removePopup() {
@@ -42,16 +43,40 @@
 
     const rect = selection.getRangeAt(0).getBoundingClientRect();
 
-    popup.style.left = `${Math.max(8, rect.left)}px`;
-    popup.style.top = `${Math.min(
-      window.innerHeight - popup.offsetHeight - 8,
-      rect.bottom + 8
-    )}px`;
+    const viewportPadding = 8;
+    const maxLeft = Math.max(
+      viewportPadding,
+      window.innerWidth - popup.offsetWidth - viewportPadding
+    );
+    const left = Math.min(
+      Math.max(viewportPadding, rect.left),
+      maxLeft
+    );
+
+    const spaceBelow = window.innerHeight - rect.bottom;
+    const preferredTop =
+      spaceBelow >= popup.offsetHeight + viewportPadding
+        ? rect.bottom + viewportPadding
+        : rect.top - popup.offsetHeight - viewportPadding;
+    const maxTop = Math.max(
+      viewportPadding,
+      window.innerHeight - popup.offsetHeight - viewportPadding
+    );
+    const top = Math.min(Math.max(viewportPadding, preferredTop), maxTop);
+
+    popup.style.left = `${left}px`;
+    popup.style.top = `${top}px`;
 
     button.addEventListener("click", async () => {
       button.disabled = true;
       button.textContent = "Translating...";
       result.textContent = "";
+
+      const controller = new AbortController();
+      const timeoutId = window.setTimeout(
+        () => controller.abort(),
+        REQUEST_TIMEOUT_MS
+      );
 
       try {
         const response = await fetch(API_URL, {
@@ -62,13 +87,32 @@
           body: JSON.stringify({
             text: selectedText,
           }),
+          signal: controller.signal,
         });
 
         if (!response.ok) {
-          throw new Error(`Backend returned ${response.status}`);
+          if (response.status === 422) {
+            result.textContent = "Selected text could not be validated.";
+            return;
+          }
+
+          if (response.status >= 500) {
+            result.textContent = "Translation service encountered an error.";
+            return;
+          }
+
+          result.textContent = `Translation request failed (${response.status}).`;
+          return;
         }
 
-        const data = await response.json();
+        let data;
+        try {
+          data = await response.json();
+        } catch (error) {
+          throw new Error("Backend returned an invalid response.", {
+            cause: error,
+          });
+        }
 
         if (typeof data.translation === "string" && data.translation.trim()) {
           result.textContent = data.translation;
@@ -80,8 +124,16 @@
           "[Malayalam WhatsApp Translator] Translation failed:",
           error
         );
-        result.textContent = "Unable to connect to translation service.";
+
+        if (error?.name === "AbortError") {
+          result.textContent = "Translation timed out. Please try again.";
+        } else if (error?.message === "Backend returned an invalid response.") {
+          result.textContent = "Translation service returned invalid data.";
+        } else {
+          result.textContent = "Unable to connect to translation service.";
+        }
       } finally {
+        window.clearTimeout(timeoutId);
         button.disabled = false;
         button.textContent = "Translate";
       }
@@ -109,8 +161,8 @@
     const focusMessage = domHelper?.findMessageContainer(focusNode);
 
     if (
-      anchorMessage &&
-      focusMessage &&
+      !anchorMessage ||
+      !focusMessage ||
       anchorMessage !== focusMessage
     ) {
       removePopup();

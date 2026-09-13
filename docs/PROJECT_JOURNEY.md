@@ -22,12 +22,12 @@ Phase 2 → Chrome extension UI
 Phase 3 → Extension ↔ FastAPI
 Phase 4 → WhatsApp Web DOM integration
 Phase 5 → IndicLID + routing validation
-Phase 6 → IndicXlit transliteration
-Phase 7 → IndicTrans2 translation integration
-Phase 8 → End-to-end product validation
+Phase 6 → IndicXlit transliteration evaluation
+Phase 7 → Roman Malayalam preprocessing and normalization
+Phase 8 → IndicTrans2 integration and end-to-end product validation
 ```
 
-Phase 0 through Phase 5 are complete. Phase 6 is the next development stage.
+Phase 0 through Phase 7 are complete. Phase 8 is the next development stage.
 
 ## 3. Phase 0 — Project Setup
 
@@ -358,26 +358,56 @@ Phase 5 is complete and candidate_v1 is frozen as the validated Malayalam routin
 
 The final product-level result was 97.00% accuracy, 100.00% precision, 96.00% recall, and 97.96% F1, with 0/25 English false positives on the final balanced validation set.
 
-## 21. Phase 6 — IndicXlit
+## 21. Phase 6 — IndicXlit Evaluation
 
-The next AI stage is transliteration:
+Phase 6 is complete. It evaluated AI4Bharat IndicXlit for Roman Malayalam to
+Malayalam-script transliteration on 75 manually authored WhatsApp-style
+samples.
 
-```text
-Roman Malayalam
-      ↓
-IndicXlit
-      ↓
-Native Malayalam
-      ↓
-IndicTrans2
-      ↓
-English meaning
-```
+The recorded baseline achieved 29.33% exact match, 91.43% mean normalized
+character similarity, and 94.74% median similarity. These are project
+validation metrics, not a standardized benchmark. Character similarity is a
+surface metric and does not establish semantic correctness.
 
-Phase 6 will first validate IndicXlit independently using realistic Roman Malayalam WhatsApp-style inputs before integrating it into FastAPI.
+The main weaknesses were short informal chat, Roman spelling variation,
+surface-form differences, English fragments and abbreviations, slang, and
+segmentation or hyphenation.
 
-The evaluation should cover short messages, conversational spelling, informal chat language, spelling variation, and code-switching rather than only clean textbook examples.
+## 22. Phase 7 — Roman Malayalam Preprocessing
 
-## 22. Final Engineering Principle
+Phase 7 investigated small, evidence-backed preprocessing changes while
+keeping the Phase 5 router and raw IndicXlit baseline fixed.
 
-Build incrementally, measure honestly, preserve failures, and integrate only validated components.
+Experiment 1 applied four Malayalam-script surface corrections after
+IndicXlit. It improved historical Phase 6 evidence from 91.43% to 92.19%
+mean similarity, but changed none of the fresh 30-sample holdout outputs.
+
+Experiment 2 applied three complete-token Roman input rules:
+
+- `nale` -> `naale`
+- `ariyamo` -> `ariyaamo`
+- `inu` -> `innu`
+
+On the fresh holdout, exact match improved from 43.33% to 46.67% and mean
+normalized similarity improved from 93.98% to 94.34%, with no observed
+regressions. The candidate `evida` -> `evideyaa` was rejected after a
+development-set regression.
+
+Regression tests later fixed Malayalam substring replacement and punctuation
+boundary behavior. The preprocessing test suite passes 10/10 locally. The
+evaluated holdout and historical result files remain frozen.
+
+## 23. Current Phase 8 Direction
+
+Phase 8 will integrate the validated routing, Roman preprocessing, IndicXlit,
+Malayalam normalization, and IndicTrans2 translation stages into the FastAPI
+backend. It will also evaluate semantic Malayalam-to-English quality and the
+complete WhatsApp selection-to-result workflow.
+
+The current tracked backend still returns a scaffold response with no
+translation. Phase 8 begins with the NLP pipeline integration and its tests.
+
+## 24. Final Engineering Principle
+
+Build incrementally, measure honestly, preserve failures, and integrate only
+validated components.
