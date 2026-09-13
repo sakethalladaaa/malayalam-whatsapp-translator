@@ -1,6 +1,7 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, Field, field_validator
+
+from .schemas import TranslateRequest, TranslateResponse
 
 
 app = FastAPI(
@@ -18,26 +19,6 @@ app.add_middleware(
 )
 
 
-class TranslateRequest(BaseModel):
-    text: str = Field(..., min_length=1, max_length=5000)
-
-    @field_validator("text")
-    @classmethod
-    def validate_text(cls, value: str) -> str:
-        value = value.strip()
-
-        if not value:
-            raise ValueError("Text cannot be empty.")
-
-        return value
-
-
-class TranslateResponse(BaseModel):
-    input: str
-    language: str
-    translation: str | None
-
-
 @app.get("/health")
 def health_check() -> dict[str, str]:
     return {"status": "ok"}
@@ -45,9 +26,6 @@ def health_check() -> dict[str, str]:
 
 @app.post("/translate", response_model=TranslateResponse)
 def translate(request: TranslateRequest) -> TranslateResponse:
-    if not request.text:
-        raise HTTPException(status_code=400, detail="Text cannot be empty.")
-
     return TranslateResponse(
         input=request.text,
         language="unknown",
