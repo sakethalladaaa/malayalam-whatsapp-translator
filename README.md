@@ -66,12 +66,14 @@ The project uses the following development tools and open-source technologies.
 | Phase | Scope | Status |
 |---|---|---|
 | Phase 0 | Git repository and project setup | ✅ Complete |
-| Phase 1 | Backend foundation | ✅ Complete |
+| Phase 1 | Backend foundation and API validation | ✅ Complete |
 | Phase 2 | Chrome extension popup UI | ✅ Complete |
-| Phase 3 | Extension → FastAPI communication | ✅ Complete |
+| Phase 3 | Extension → FastAPI communication and error handling | ✅ Complete |
 | Phase 4 | WhatsApp Web DOM integration | ✅ Complete |
 | Phase 5 | IndicLID evaluation and Malayalam routing | ✅ Complete |
-| Phase 6 | IndicXlit transliteration | ⬜ Next |
+| Phase 6 | IndicXlit transliteration evaluation | ✅ Complete |
+| Phase 7 | Roman Malayalam preprocessing experiments | ✅ Complete |
+| Phase 8 | IndicTrans2 integration and end-to-end validation | ⬜ Next |
 
 ## Current Architecture
 
@@ -87,6 +89,12 @@ Language identification + routing
 English ─────────────────→ Leave unchanged
       ↓
 Malayalam-family
-      ├── Native Malayalam ─────→ Translation path
-      ├── Roman Malayalam ──────→ IndicXlit → Translation
-      └── Mixed Malayalam-English → Malayalam-aware routing
+      ├── Native Malayalam ─────→ IndicTrans2 → English meaning
+      ├── Roman Malayalam ──────→ Roman normalization → IndicXlit
+      │                           → Malayalam normalization → IndicTrans2
+      └── Mixed Malayalam-English → Malayalam-aware routing → Translation
+
+Phase 5 routing, Phase 6 transliteration, and Phase 7 preprocessing have
+validated evaluation artifacts. The backend NLP pipeline and IndicTrans2
+integration remain Phase 8 work.
+```
