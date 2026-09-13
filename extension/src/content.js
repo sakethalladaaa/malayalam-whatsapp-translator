@@ -2,6 +2,7 @@
   "use strict";
 
   const API_URL = "http://127.0.0.1:8000/translate";
+  const REQUEST_TIMEOUT_MS = 15000;
   let popup = null;
 
   function removePopup() {
@@ -71,6 +72,12 @@
       button.textContent = "Translating...";
       result.textContent = "";
 
+      const controller = new AbortController();
+      const timeoutId = window.setTimeout(
+        () => controller.abort(),
+        REQUEST_TIMEOUT_MS
+      );
+
       try {
         const response = await fetch(API_URL, {
           method: "POST",
@@ -80,13 +87,32 @@
           body: JSON.stringify({
             text: selectedText,
           }),
+          signal: controller.signal,
         });
 
         if (!response.ok) {
-          throw new Error(`Backend returned ${response.status}`);
+          if (response.status === 422) {
+            result.textContent = "Selected text could not be validated.";
+            return;
+          }
+
+          if (response.status >= 500) {
+            result.textContent = "Translation service encountered an error.";
+            return;
+          }
+
+          result.textContent = `Translation request failed (${response.status}).`;
+          return;
         }
 
-        const data = await response.json();
+        let data;
+        try {
+          data = await response.json();
+        } catch (error) {
+          throw new Error("Backend returned an invalid response.", {
+            cause: error,
+          });
+        }
 
         if (typeof data.translation === "string" && data.translation.trim()) {
           result.textContent = data.translation;
@@ -98,8 +124,16 @@
           "[Malayalam WhatsApp Translator] Translation failed:",
           error
         );
-        result.textContent = "Unable to connect to translation service.";
+
+        if (error?.name === "AbortError") {
+          result.textContent = "Translation timed out. Please try again.";
+        } else if (error?.message === "Backend returned an invalid response.") {
+          result.textContent = "Translation service returned invalid data.";
+        } else {
+          result.textContent = "Unable to connect to translation service.";
+        }
       } finally {
+        window.clearTimeout(timeoutId);
         button.disabled = false;
         button.textContent = "Translate";
       }
