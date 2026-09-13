@@ -109,8 +109,8 @@
     const focusMessage = domHelper?.findMessageContainer(focusNode);
 
     if (
-      anchorMessage &&
-      focusMessage &&
+      !anchorMessage ||
+      !focusMessage ||
       anchorMessage !== focusMessage
     ) {
       removePopup();
