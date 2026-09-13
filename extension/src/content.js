@@ -42,11 +42,29 @@
 
     const rect = selection.getRangeAt(0).getBoundingClientRect();
 
-    popup.style.left = `${Math.max(8, rect.left)}px`;
-    popup.style.top = `${Math.min(
-      window.innerHeight - popup.offsetHeight - 8,
-      rect.bottom + 8
-    )}px`;
+    const viewportPadding = 8;
+    const maxLeft = Math.max(
+      viewportPadding,
+      window.innerWidth - popup.offsetWidth - viewportPadding
+    );
+    const left = Math.min(
+      Math.max(viewportPadding, rect.left),
+      maxLeft
+    );
+
+    const spaceBelow = window.innerHeight - rect.bottom;
+    const preferredTop =
+      spaceBelow >= popup.offsetHeight + viewportPadding
+        ? rect.bottom + viewportPadding
+        : rect.top - popup.offsetHeight - viewportPadding;
+    const maxTop = Math.max(
+      viewportPadding,
+      window.innerHeight - popup.offsetHeight - viewportPadding
+    );
+    const top = Math.min(Math.max(viewportPadding, preferredTop), maxTop);
+
+    popup.style.left = `${left}px`;
+    popup.style.top = `${top}px`;
 
     button.addEventListener("click", async () => {
       button.disabled = true;
