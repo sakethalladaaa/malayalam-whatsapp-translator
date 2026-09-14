@@ -2,15 +2,9 @@
 
 A Chrome extension project that aims to help people understand Malayalam messages on WhatsApp Web by showing their English meaning.
 
-<<<<<<< HEAD
-> Development status: the extension/API foundation and model experiments are in place, but end-to-end Malayalam-to-English translation is not connected. The current `/translate` endpoint returns `language: "unknown"` and `translation: null`.
-
-## Project Overview
-=======
 The project covers **native Malayalam**, **Romanized Malayalam (Manglish)** and **mixed Malayalam-English chat**. Its core product requirement is to preserve ordinary English messages while translating Malayalam-family text.
->>>>>>> origin/main
 
-> **Development snapshot — 13 September 2026:** The extension and FastAPI foundation work, and language-routing, transliteration and preprocessing experiments have been recorded. Real model inference is still being connected to the backend. The current `/translate` endpoint returns `language: "unknown"` and `translation: null`.
+> **Development snapshot — 14 September 2026:** The extension and FastAPI foundation work, and language-routing, transliteration and preprocessing experiments have been recorded. Real model inference is still being connected to the backend. The current `/translate` endpoint returns `language: "unknown"` and `translation: null`.
 
 This project focuses on language identification and translation. It is not an AI summarizer or chatbot.
 
@@ -36,15 +30,15 @@ These describe the target behavior. The current extension can submit selected te
 
 ### Where the work currently lives
 
-The default branch is `main`. At this snapshot, both development pull requests are **open and unmerged**. A feature or workflow committed to either PR is not yet available on `main`.
+The default branch is `main`. **PR #4 merged on 14 September 2026**; its Phase 8 contract, notebook and workflows are now on `main`. **PR #3 remains open and unmerged**, so its reliability improvements and broader CI still need integration.
 
 | Location | Snapshot commit | Work available |
 | --- | --- | --- |
-| [`main`](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/tree/main) | `6045d14` | Extension/API foundation and Phase 5–7 evaluation artifacts. |
+| [`main`](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/tree/main) | `826f5fb` | Extension/API foundation, Phase 5–7 evaluation artifacts and merged Phase 8 contract/notebook/CI. |
 | [PR #3 — Phase 1–7 gaps](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/pull/3) | `6e5d041` | API tests and schemas, extension reliability fixes, normalization boundary fixes and broader CI. |
-| [PR #4 — Phase 8 IndicLID contract](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/pull/4) | `9e4b7c8` | Adapter/router contract, Colab notebook work, notebook checks, workflow lint, Ruff, CodeQL, dependency audit and Dependabot configuration. |
+| [PR #4 — Phase 8 IndicLID contract](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/pull/4) | `62f38fc` (merged) | Adapter/router contract, Colab notebook work, notebook checks, workflow lint, Ruff, CodeQL, dependency audit and Dependabot configuration. |
 
-The two PR branches contain different changes. Their individual green checks do not establish that the combined code has passed validation. The repository homepage will show the updated README after its changes reach `main`.
+PR #3 contains separate changes. Its earlier green checks do not establish compatibility with the current `main`; reconcile overlapping files and validate the combined state before merging.
 
 ### Phase-by-phase status
 
@@ -58,7 +52,7 @@ The two PR branches contain different changes. Their individual green checks do 
 | 5 | IndicLID evaluation and Malayalam routing | Evaluation complete; historical `candidate_v1` policy frozen. |
 | 6 | IndicXlit transliteration | Evaluation complete on a 75-sample project dataset; production API integration pending. |
 | 7 | Roman input and Malayalam output normalization | Two experiments documented; retained preprocessing candidate and additional regression hardening in PR #3. |
-| 8 | IndicLID runtime reproduction and backend integration | In progress. Contract tests and notebook work are in PR #4; reproducibility follow-ups and actual backend model loading remain open. |
+| 8 | IndicLID runtime reproduction and backend integration | In progress. Contract tests and notebook work from PR #4 are merged; reproducibility follow-ups and actual backend model loading remain open. |
 
 IndicTrans2 integration and semantic evaluation of the full Malayalam-to-English flow remain future work.
 
@@ -81,21 +75,6 @@ For example, the current API accepts:
 
 It returns the scaffold response:
 
-<<<<<<< HEAD
-Development and model experiments use the following tools. IndicTrans2 integration is planned; the model runtimes are not installed by the CI dependency manifests.
-
-| Tool / Technology | Purpose | Official Link |
-|---|---|---|
-| Python 3.11 | Backend/API contract CI | [Python](https://www.python.org/downloads/) |
-| Git | Version control | https://git-scm.com/ |
-| Google Chrome | Chrome extension testing | https://www.google.com/chrome/ |
-| Visual Studio Code | Development environment | https://code.visualstudio.com/ |
-| FastAPI | Backend API framework | https://fastapi.tiangolo.com/ |
-| Uvicorn | ASGI server for FastAPI | https://www.uvicorn.org/ |
-| AI4Bharat IndicLID | Indian language identification | https://github.com/AI4Bharat/IndicLID |
-| AI4Bharat IndicXlit | Indic transliteration | https://github.com/AI4Bharat/IndicXlit |
-| AI4Bharat IndicTrans2 | Planned Malayalam-to-English translation | [IndicTrans2](https://github.com/AI4Bharat/IndicTrans2) |
-=======
 ```json
 {
   "input": "Njan innu busy aanu",
@@ -105,18 +84,9 @@ Development and model experiments use the following tools. IndicTrans2 integrati
 ```
 
 The request reaches the backend, but this response does not perform language identification or translation. See the [current endpoint implementation](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/blob/9e4b7c83d2c6f210cfc1bbab7a07884df769dfd1/backend/app/main.py).
->>>>>>> origin/main
 
 ### Reliability improvements in PR #3
 
-<<<<<<< HEAD
-- Python 3.11 for backend/contract checks; Python 3.13 for static notebook CI
-- Separate environments for legacy IndicLID/IndicXlit experiments; CI Python versions do not establish model-runtime compatibility
-- Google Chrome
-- Git
-- Visual Studio Code
-- macOS / Windows / Linux
-=======
 | Change | Why we added it |
 | --- | --- |
 | Centralized request and response schemas | Keep the API contract in one place as backend modules grow. |
@@ -127,150 +97,14 @@ The request reaches the backend, but this response does not perform language ide
 | Popup positioning within viewport bounds | Improve usability near screen edges. |
 | Complete-token Malayalam normalization, including combining marks and joiners | Prevent a short correction rule from altering part of a longer Malayalam word. |
 | 10 preprocessing regression tests | Preserve longer words, punctuation, Roman token boundaries, case behavior and empty-input handling. |
->>>>>>> origin/main
 
 These changes are reviewable in [PR #3](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/pull/3). Browser checks are recorded in that PR; the JavaScript CI check only verifies syntax.
 
-<<<<<<< HEAD
-Snapshot: 13 September 2026. [PR #3](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/pull/3) and [PR #4](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/pull/4) are open and have not been merged into `main`. The Phase 8 files and automation described below are on PR #4's `feat/phase8-indiclid-contract` branch.
-
-| Phase | Scope | Status |
-|---|---|---|
-| Phase 0 | Git repository and project setup | Complete |
-| Phase 1 | Backend foundation | Foundation complete; further API validation in PR #3 |
-| Phase 2 | Chrome extension popup UI | Foundation complete |
-| Phase 3 | Extension-to-FastAPI communication | Foundation complete; error-handling improvements in PR #3 |
-| Phase 4 | WhatsApp Web DOM integration | Foundation complete; selection/viewport fixes in PR #3 |
-| Phase 5 | IndicLID evaluation and Malayalam routing | Evaluation complete; `candidate_v1` frozen |
-| Phase 6 | IndicXlit transliteration evaluation | Evaluation complete; not a production translation pipeline |
-| Phase 7 | Roman-input and Malayalam-output normalization | Experiments complete; regression hardening in PR #3 |
-| Phase 8 | Original IndicLID runtime reproduction and backend integration | In progress; adapter contract, notebook work and CI in PR #4 |
-
-### Phase 5: frozen routing evidence
-
-The documented `candidate_v1` routes Malayalam-family text when IndicLID predicts `mal_Mlym` or `mal_Latn`, or when the frozen Roman Malayalam lexical fallback fires. The fallback requires at least one marker for up to four words, and at least two for longer messages.
-
-Historical results on the frozen 100-sample evaluation:
-
-| Accuracy | Precision | Recall | F1 | English false positives |
-|---:|---:|---:|---:|---:|
-| 97.00% | 100.00% | 96.00% | 97.96% | 0/25 |
-
-These are recorded evaluation results, not a fresh validation of the current backend. Do not retune the policy or reuse evaluated holdouts for tuning. See the [Phase 5 report](phase5/evaluation/README.md).
-
-### Phases 6-7: transliteration and preprocessing
-
-IndicXlit was evaluated for Roman Malayalam to Malayalam-script transliteration. Raw transliteration alone does not resolve informal spellings, lexical ambiguity or mixed-language chat. See the [Phase 6 failure analysis](phase6/evaluation/FAILURE_ANALYSIS.md).
-
-[Phase 7 preprocessing](phase7/preprocessing.py) has two layers:
-
-- Roman input normalization before transliteration: `nale → naale`, `ariyamo → ariyaamo`, `inu → innu`.
-- Conservative Malayalam surface-form normalization after transliteration, including `ഇന്നു → ഇന്ന്` and `വിളിക്കം → വിളിക്കാം`.
-
-The retained Roman-input candidate improved exact match from 43.33% to 46.67% on its 30-sample holdout, with two improvements and no observed regressions. This is limited project evidence, not semantic translation accuracy. See the [Phase 7 result and evaluation restrictions](phase7/evaluation/EXPERIMENT_2_RESULT.md).
-
-### Phase 8: completed pieces and remaining work
-
-Implemented in PR #4:
-
-- [IndicLID adapter boundary](backend/app/lid.py): defines `LIDResult`, rejects empty input and raises `IndicLIDUnavailableError` for an unconfigured runtime. It does not yet load or run a model.
-- [Routing contract](backend/app/router.py): exposes `malayalam_native`, `roman_malayalam`, `mixed` and `english` categories, with adapter/router unit tests.
-- [Colab notebook](Phase8_IndicLID_Fix.ipynb): pins an upstream IndicLID commit, patches legacy BERT inference, checks weight-transfer mismatches and records batch/direct-BERT smoke-test outputs.
-- Four GitHub Actions workflows and a Dependabot configuration, detailed below.
-
-The Phase 8 Roman marker inventory is a conservative reconstruction, not the recovered Phase 5 implementation. Its additional script-based routing is not proof of equivalence to the frozen policy; the Phase 5 metrics must not be attributed to this reconstruction.
-
-The notebook's saved outputs show native Malayalam, Roman Malayalam, English and Latin-script mixed-language examples. They do not establish a fresh, repeatable Colab setup. Before backend integration, the remaining review items are:
-
-1. Explicitly pin compatible runtime dependencies and document any restart requirements.
-2. Make checkout/download paths absolute and reruns safe, with setup failures stopping execution.
-3. Assert batch output count and input order, and add a genuine Malayalam-plus-English mixed-script example.
-4. Save fresh-runtime and repeated-run evidence.
-
-After that, implement real model loading/prediction in the adapter, connect FastAPI, and validate routing, preprocessing, transliteration and translation together. Follow [issue #2](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/issues/2) and the [runtime review follow-ups](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/pull/4#issuecomment-5655435624).
-
-## Target Architecture
-
-This is the intended processing flow, not an already connected production pipeline.
-
-```mermaid
-flowchart TD
-    selection["Selected WhatsApp message"] --> api["Chrome extension and FastAPI"]
-    api --> lid["IndicLID and routing"]
-    lid -->|English| unchanged["Leave unchanged"]
-    lid -->|Native Malayalam| translation["Malayalam-to-English translation"]
-    lid -->|Roman Malayalam| roman["Roman normalization"]
-    roman --> xlit["IndicXlit"]
-    xlit --> native["Malayalam normalization"]
-    native --> translation
-    lid -->|Mixed text| mixed["Malayalam-aware processing"]
-    mixed --> translation
-```
-
-## Bots, CI and Security Checks
-
-Dependabot is an update bot; the other entries are automated checks run by GitHub Actions. Their configurations are in PR #4, not yet on `main` at this snapshot.
-
-| Integration | What it checks or does | How it helps |
-|---|---|---|
-| Phase 8 contract tests | Compiles backend Python and runs the 13 adapter/router tests on Python 3.11 | Catches syntax errors and regressions in the tested contract |
-| Notebook validation | Checks tracked notebook schema, Python/shell-cell syntax and saved execution errors; tests the validator on Python 3.13 | Catches structurally broken notebooks without running model code |
-| actionlint | Validates workflow YAML, expressions and supported shell checks within Phase 8 CI | Catches workflow mistakes before they affect CI |
-| CodeQL | Analyzes Python and JavaScript/TypeScript source; uploads code-scanning results | Helps reviewers find potential security issues in source code |
-| Ruff | Runs `ruff check` over `backend`, `phase6`, `phase7` and `scripts` | Catches Python lint problems; no separate formatter check is configured |
-| pip-audit | Audits `requirements-ci.txt` and notebook-validation dependencies, including resolved dependencies | Reports known package vulnerabilities; not a source-code or model audit |
-| Dependabot | Configured for grouped weekly GitHub Actions and pip-manifest update PRs in `/` and `/.github` | Reduces manual dependency-update work; does not automatically merge fixes |
-
-### Workflow files and triggers
-
-| Workflow | Configured triggers |
-|---|---|
-| [Phase 8 CI](.github/workflows/phase8.yml) | PRs targeting `main`, pushes to `main`, manual |
-| [Python Quality / Ruff](.github/workflows/ruff.yml) | PRs targeting `main`, pushes to `main`, manual |
-| [CodeQL](.github/workflows/codeql.yml) | PRs targeting `main`, pushes to `main`, weekly, manual |
-| [Python Dependency Audit](.github/workflows/dependency-audit.yml) | PRs targeting `main`, pushes to `main`, weekly, manual |
-
-Scheduled runs and manual-dispatch availability require the workflows on the default branch. See [GitHub's trigger documentation](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows).
-
-[Dependabot configuration](.github/dependabot.yml) has a limit of five open version-update PRs per update entry. Its default-branch activation remains pending merge; configuration in a PR is not evidence that update PRs have run. See [Dependabot setup](https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configure-version-updates).
-
-The broader backend/API, Phase 7 and extension syntax workflow is separate work in [PR #3](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/pull/3); it is not part of the Phase 8 workflow.
-
-### What green checks do not prove
-
-- Notebook validation does not execute cells, download models or prove fresh Colab reproducibility.
-- Contract tests do not exercise real IndicLID inference, translation quality or the frozen Phase 5 evaluation.
-- A successful audit means no known vulnerabilities were reported for the dependencies resolved at that time, not that the project is vulnerability-free.
-- Adding workflows does not automatically make them required merge checks; repository rules must be configured separately.
-
-See [CI validation details](docs/CI.md) for the notebook validator's scope.
-
-### Verified CI snapshot
-
-All four workflows passed for commit [`671f20c`](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/commit/671f20c98258d2cd9e81ee7b1c610ff9f4c5dd4a):
-
-- [Phase 8 CI](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/actions/runs/34782555670)
-- [Python Quality](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/actions/runs/34782555612)
-- [CodeQL](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/actions/runs/34782555512)
-- [Python Dependency Audit](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/actions/runs/34782555620)
-
-The local backend/test and notebook-manifest audits also reported no known vulnerabilities, as recorded in the [PR validation comment](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/pull/4#issuecomment-5656134448). Check the [Actions page](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/actions) for newer results.
-
-## Local Validation
-
-From the repository root, use an activated Python 3.11 test environment, separate from legacy model environments. The commands below install test/audit tools only, not IndicLID, IndicXlit or IndicTrans2.
-
-```bash
-python -m pip install -r requirements-ci.txt -r .github/requirements-notebook-ci.txt -r .github/requirements-audit.txt
-python -m compileall -q backend
-PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest backend/tests phase7/tests scripts/tests -q
-python scripts/check_notebooks.py
-=======
 ### NLP experiments and Phase 8 contract
 
 The project has committed evaluation datasets, output CSVs, failure analyses, preprocessing code and an IndicXlit inference wrapper.
 
-PR #4 adds:
+Merged PR #4 provides:
 
 - **An IndicLID adapter boundary:** `LIDResult`, empty-input validation and an explicit `IndicLIDUnavailableError` when inference is requested without a configured runtime.
 - **A routing contract:** `malayalam_native`, `roman_malayalam`, `mixed` and `english` categories, with conservative Roman Malayalam markers and unit tests.
@@ -298,7 +132,7 @@ Sources: [adapter](https://github.com/sakethalladaaa/malayalam-whatsapp-translat
 | Google Colab, PyTorch, Transformers and fastText | IndicLID runtime investigation and inference experiments | Notebook evidence committed; complete reproducible setup pending. |
 | Git and GitHub pull requests | Version history, focused changes, review and validation evidence | In use. |
 | pytest, unittest and Node.js | API/router/preprocessing tests, notebook-validator tests and JavaScript syntax checks | Configured across PR #3 and PR #4. |
-| GitHub Actions, Ruff, CodeQL, pip-audit and Dependabot | Automated checks and dependency maintenance | Detailed below; configurations remain on the PR branches. |
+| GitHub Actions, Ruff, CodeQL, pip-audit and Dependabot | Automated checks and dependency maintenance | Phase 8 automation is on `main`; broader CI remains in open PR #3. |
 | Google Chrome and Visual Studio Code | Browser verification and development | Development tools. |
 
 Model environments are separate from the API/test environment. The recorded IndicXlit evaluation used Python 3.10.21 and pip 24.0 for its legacy dependency stack. Python 3.13 in notebook CI is used for **static validation**; it does not certify model-runtime compatibility.
@@ -406,23 +240,24 @@ The Phase 8 workflows also use job timeouts, cancellation of superseded runs, re
 | CodeQL | [codeql.yml](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/blob/9e4b7c83d2c6f210cfc1bbab7a07884df769dfd1/.github/workflows/codeql.yml) | Pull requests targeting `main`; pushes to `main`; weekly; manual trigger declared. |
 | Python Dependency Audit | [dependency-audit.yml](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/blob/9e4b7c83d2c6f210cfc1bbab7a07884df769dfd1/.github/workflows/dependency-audit.yml) | Pull requests targeting `main`; pushes to `main`; weekly; manual trigger declared. |
 
-Scheduled workflows run from the default branch; GitHub's normal “Run workflow” UI requires the workflow there. Those default-branch capabilities are pending merge. See [GitHub workflow triggers](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows).
+Scheduled workflows run from the default branch; GitHub's normal “Run workflow” UI requires the workflow there. The Phase 8 workflows are now on `main` following PR #4's merge. See [GitHub workflow triggers](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows).
 
-[Dependabot's configuration](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/blob/9e4b7c83d2c6f210cfc1bbab7a07884df769dfd1/.github/dependabot.yml) is committed in PR #4. Its presence on that branch is not evidence that recurring update PRs are active on `main`; see [Dependabot setup](https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configure-version-updates).
+[Dependabot's configuration](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/blob/9e4b7c83d2c6f210cfc1bbab7a07884df769dfd1/.github/dependabot.yml) is now on `main`. GitHub recorded successful Dependabot update runs after the merge; see [Dependabot setup](https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configure-version-updates).
 
 Adding a workflow does not automatically make it a required merge check. Required checks are a separate repository configuration.
 
 ### Verified GitHub Actions snapshot
 
-The following results were checked against the PR heads listed above:
+GitHub recorded successful runs for `main` commit `826f5fb78362ce4afd029358515fb0a7fa46304c` on 14 September 2026:
 
-| Branch head | Workflow | Recorded result |
-| --- | --- | --- |
-| PR #3 — `6e5d041` | [CI run](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/actions/runs/34754579821) | Passed: 11 API tests, 10 preprocessing tests and extension JavaScript syntax check. |
-| PR #4 — `9e4b7c8` | [Phase 8 CI run](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/actions/runs/34784229027) | Passed: 13 contract tests, 9 notebook-validator tests, static notebook validation and workflow lint. |
-| PR #4 — `9e4b7c8` | [Python Quality run](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/actions/runs/34784229020) | Ruff check passed. |
-| PR #4 — `9e4b7c8` | [CodeQL run](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/actions/runs/34784228999) | Python and JavaScript/TypeScript analysis jobs passed. |
-| PR #4 — `9e4b7c8` | [Python Dependency Audit run](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/actions/runs/34784228985) | Both dependency-audit steps passed. |
+| Workflow | Recorded result |
+| --- | --- |
+| [Phase 8 CI](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/actions/runs/34869016971) | Passed |
+| [Python Quality](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/actions/runs/34869017177) | Passed |
+| [Python Dependency Audit](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/actions/runs/34869017003) | Passed |
+| [CodeQL](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/actions/runs/34869016988) | Passed |
+
+These runs do not include PR #3's broader CI workflow.
 
 These are GitHub-recorded results for specific commits. New commits need their own checks; consult the [Actions page](https://github.com/sakethalladaaa/malayalam-whatsapp-translator/actions) for later runs.
 
@@ -457,7 +292,7 @@ More detail: [Phase 6 engineering learnings](https://github.com/sakethalladaaa/m
 | --- | --- | --- |
 | 1 | Complete IndicLID notebook reproducibility | Explicit compatible dependency pins and restart guidance; one absolute workspace/model root; setup that preserves an existing checkout and stops on failures; fresh and repeated “Run all” output. |
 | 2 | Strengthen runtime smoke tests | Assert output count, input order and expected labels; include genuine Malayalam-plus-English mixed-script text and retain the direct BERT fallback check. |
-| 3 | Validate the combined PR changes before integration into `main` | Reconcile overlapping files and rerun the applicable API, preprocessing, contract, notebook, lint and audit checks on the actual combined state. |
+| 3 | Integrate the still-open Phase 1–7 PR #3 with current `main` | Reconcile overlapping files and rerun the applicable API, preprocessing, contract, notebook, lint and audit checks on the actual combined state. |
 | 4 | Implement real IndicLID backend loading and prediction | Adapter tests with the provisioned runtime, FastAPI integration tests and clear unavailable-runtime handling. |
 | 5 | Connect routing, preprocessing, IndicXlit and IndicTrans2 | End-to-end results for native Malayalam, Roman Malayalam, mixed messages and unchanged English controls. |
 | 6 | Evaluate final meaning and extension behavior | Separate semantic translation evaluation plus browser checks for responses, latency, failures and message selection. |
@@ -470,7 +305,7 @@ DCO sign-off checking and SonarQube Cloud remain pending setup decisions; no DCO
 
 Use the environment appropriate to the branch and check being run. The commands below are validation references; CI dependencies do not install IndicLID, IndicXlit or IndicTrans2.
 
-### PR #4: adapter and router checks
+### Main (merged PR #4): adapter and router checks
 
 From the repository root in an activated Python 3.11 environment:
 
@@ -480,7 +315,7 @@ python -m compileall -q backend
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest backend/tests/test_lid.py backend/tests/test_router.py -q
 ```
 
-### PR #4: static notebook checks
+### Main (merged PR #4): static notebook checks
 
 To match notebook CI, use a separate Python 3.13 environment:
 
@@ -492,37 +327,17 @@ python scripts/check_notebooks.py
 
 These commands validate notebook files without executing their cells.
 
-### PR #4: lint and dependency checks
+### Main (merged PR #4): lint and dependency checks
 
 Use the Python 3.11 tooling environment:
 
 ```bash
 python -m pip install ruff==0.16.7 -r .github/requirements-audit.txt
 python -m ruff check backend phase6 phase7 scripts
->>>>>>> origin/main
 python -m pip_audit -r requirements-ci.txt
 python -m pip_audit -r .github/requirements-notebook-ci.txt
 ```
 
-<<<<<<< HEAD
-Optional local lint and extension syntax checks (Node.js required for the latter):
-
-```bash
-python -m pip install ruff==0.16.7
-python -m ruff check backend phase6 phase7 scripts
-node --check extension/src/content.js
-```
-
-`requirements-ci.txt` pins the direct API/test dependencies; it is not a full transitive lockfile or a model-runtime manifest. The Phase 8 contract job currently installs pytest directly, while the audit reads this manifest. Notebook tooling and the audit tool are pinned separately in `.github/requirements-notebook-ci.txt` and `.github/requirements-audit.txt`.
-
-## Not Yet Integrated
-
-- DCO sign-off check: contributor sign-off policy and rollout remain pending; no DCO check is enabled.
-- SonarQube Cloud: project/account integration and analysis configuration remain pending; no Sonar quality gate is enabled.
-- Real IndicLID backend loading, IndicTrans2 translation and end-to-end API/model validation remain pending.
-
-Keep evaluation datasets and the frozen Phase 5 policy unchanged while completing the runtime work. Passing CI is not a substitute for the outstanding Colab and end-to-end validation.
-=======
 `requirements-ci.txt` pins direct API/test dependencies; it is not a complete transitive lockfile or a model-runtime manifest. Notebook tooling and pip-audit have their own manifests. The Phase 8 contract CI job itself installs only its pinned pytest dependency.
 
 ### PR #3: API, preprocessing and extension checks
@@ -561,4 +376,3 @@ Use focused branches and PRs, inspect existing changes before editing, include v
 Preserve the frozen Phase 5 policy and recorded evaluation datasets. Propose new model or preprocessing experiments with a separate development source, an explicit baseline and fresh evaluation evidence. Report failures and unresolved cases alongside improvements.
 
 The project builds on AI4Bharat's [IndicLID](https://github.com/AI4Bharat/IndicLID), [IndicXlit](https://github.com/AI4Bharat/IndicXlit) and planned [IndicTrans2](https://github.com/AI4Bharat/IndicTrans2) integration.
->>>>>>> origin/main
