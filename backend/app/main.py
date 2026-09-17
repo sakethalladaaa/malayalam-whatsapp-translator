@@ -2,11 +2,25 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, field_validator
 
+from backend.app.indictrans2_runtime import get_indictrans2_engine
+from backend.app.indicxlit_runtime import get_indicxlit_engine
+from backend.app.pipeline import (
+    MixedTextUnsupportedError,
+    TranslationPipeline,
+)
+from backend.app.translator import (
+    IndicTrans2,
+    IndicTrans2UnavailableError,
+)
+from backend.app.transliterator import (
+    IndicXlit,
+    IndicXlitUnavailableError,
+)
+
 app = FastAPI(
     title="Malayalam WhatsApp Translator API",
     version="0.1.0",
 )
-
 
 app.add_middleware(
     CORSMiddleware,
@@ -44,11 +58,48 @@ def health_check() -> dict[str, str]:
 
 @app.post("/translate", response_model=TranslateResponse)
 def translate(request: TranslateRequest) -> TranslateResponse:
-    if not request.text:
-        raise HTTPException(status_code=400, detail="Text cannot be empty.")
+    try:
+        transliterator = IndicXlit(
+            engine=get_indicxlit_engine(),
+        )
 
-    return TranslateResponse(
-        input=request.text,
-        language="unknown",
-        translation=None,
-    )
+        translator = IndicTrans2(
+            engine=get_indictrans2_engine(),
+        )
+
+        pipeline = TranslationPipeline(
+            transliterator=transliterator,
+            translator=translator,
+        )
+
+        result = pipeline.process(request.text)
+
+        return TranslateResponse(
+            input=request.text,
+            language=result.route,
+            translation=result.translation,
+        )
+
+    except IndicTrans2UnavailableError as exc:
+        raise HTTPException(
+            status_code=503,
+            detail=str(exc),
+        ) from exc
+
+    except IndicXlitUnavailableError as exc:
+        raise HTTPException(
+            status_code=503,
+            detail=str(exc),
+        ) from exc
+
+    except MixedTextUnsupportedError as exc:
+        raise HTTPException(
+            status_code=501,
+            detail=str(exc),
+        ) from exc
+
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=400,
+            detail=str(exc),
+        ) from exc
