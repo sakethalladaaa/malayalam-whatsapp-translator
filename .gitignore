@@ -221,3 +221,6 @@ __marimo__/
 .venv-indicxlit/
 
 .venv-phase9/
+
+# Phase 9 IndicTrans2 runtime
+.venv-indictrans2/
