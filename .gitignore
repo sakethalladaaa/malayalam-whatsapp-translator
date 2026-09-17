@@ -219,3 +219,5 @@ __marimo__/
 
 # Phase 6 IndicXlit environment
 .venv-indicxlit/
+
+.venv-phase9/
