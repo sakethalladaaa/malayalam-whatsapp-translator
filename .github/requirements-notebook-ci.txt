@@ -1,3 +1,3 @@
 # Tooling for static notebook validation, separate from the IndicLID runtime.
-nbformat==5.10.4
-ipython==8.37.0
+nbformat==5.11.1
+ipython==9.17.1
