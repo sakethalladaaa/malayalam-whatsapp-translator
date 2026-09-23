@@ -29,9 +29,20 @@ class IndicLID:
                 "IndicLID model/runtime is not configured in this environment."
             )
 
-        predictions = self._model.batch_predict([text.strip()], batch_size=1)
+        try:
+            predictions = self._model.batch_predict(
+                [text.strip()],
+                batch_size=1,
+            )
+        except Exception as exc:
+            raise IndicLIDUnavailableError("IndicLID inference failed.") from exc
 
-        if len(predictions) != 1 or len(predictions[0]) != 4:
+        if (
+            not isinstance(predictions, (list, tuple))
+            or len(predictions) != 1
+            or not isinstance(predictions[0], (list, tuple))
+            or len(predictions[0]) != 4
+        ):
             raise IndicLIDUnavailableError(
                 "IndicLID returned an unexpected prediction format."
             )
