@@ -2,8 +2,11 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, field_validator
 
+from backend.app.indiclid_runtime import get_indiclid_engine
 from backend.app.indictrans2_runtime import get_indictrans2_engine
+from backend.app.lid import IndicLID, IndicLIDUnavailableError
 from backend.app.indicxlit_runtime import get_indicxlit_engine
+from backend.app.router import route_language
 from backend.app.pipeline import (
     MixedTextUnsupportedError,
     TranslationPipeline,
@@ -78,13 +81,28 @@ def translate(request: TranslateRequest) -> TranslateResponse:
             translator=_LazyIndicTrans2(),
         )
 
-        result = pipeline.process(request.text)
+        indiclid_code = None
+        if route_language(request.text) != "mixed":
+            engine = get_indiclid_engine()
+            if engine is not None:
+                indiclid_code = IndicLID(model=engine).predict(request.text).code
+
+        result = pipeline.process(
+            request.text,
+            indiclid_code=indiclid_code,
+        )
 
         return TranslateResponse(
             input=request.text,
             language=result.route,
             translation=result.translation,
         )
+
+    except IndicLIDUnavailableError as exc:
+        raise HTTPException(
+            status_code=503,
+            detail=str(exc),
+        ) from exc
 
     except IndicTrans2UnavailableError as exc:
         raise HTTPException(
