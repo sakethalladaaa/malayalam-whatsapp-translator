@@ -63,10 +63,7 @@ def roman_malayalam_fallback(text: str) -> bool:
     if not words:
         return False
 
-    marker_hits = sum(
-        word in ROMAN_MALAYALAM_MARKERS
-        for word in words
-    )
+    marker_hits = sum(word in ROMAN_MALAYALAM_MARKERS for word in words)
 
     required_hits = (
         SHORT_TEXT_REQUIRED_MARKERS
@@ -104,10 +101,14 @@ def route_language(
         return "roman_malayalam"
 
     if contains_malayalam_script(text):
-        return "mixed" if any(
-            char.isascii() and char.isalpha()
-            for char in text
-        ) else "malayalam_native"
+        return (
+            "mixed"
+            if any(char.isascii() and char.isalpha() for char in text)
+            else "malayalam_native"
+        )
+
+    if code == "eng_Latn":
+        return "english"
 
     if roman_malayalam_fallback(text):
         return "roman_malayalam"
