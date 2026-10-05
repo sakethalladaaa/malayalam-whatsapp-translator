@@ -1,5 +1,5 @@
 # Backend/API and test dependencies used by repository CI.
-fastapi==0.141.1
+fastapi==0.142.2
 pydantic==2.13.5
 httpx==0.28.1
 pytest==9.1.1
