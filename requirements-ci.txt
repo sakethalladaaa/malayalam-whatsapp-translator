@@ -1,6 +1,6 @@
 # Backend/API and test dependencies used by repository CI.
-fastapi==0.141.1
-pydantic==2.13.5
+fastapi==0.162.0
+pydantic==2.14.3
 httpx==0.28.1
-pytest==9.1.1
+pytest==9.2.0
 pytest-cov==7.1.0
